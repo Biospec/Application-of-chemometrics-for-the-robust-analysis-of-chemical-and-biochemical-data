@@ -1,0 +1,18 @@
+par(mfcol = c(1,2))
+comp = read.table("Comparison.3.classes.csv",sep=",",header=T)
+comp = comp*100
+plot(comp[1:25,1],type = "n", ylim = c(40,100),lab = c(25,10,7),ylab = "Percentage of correct classification in validation", xlab = "Number of components",cex.lab = 1.4, main = "(A) PCA-LDA",cex.main = 1.4)
+points(comp[1:25,1],type = "s", col = "black")
+points(comp[1:25,3],type = "s", col = "red")
+points(comp[1:25,5],type = "s", col = "green")
+points(comp[1:25,7],type = "s", col = "blue")
+points(comp[1:25,9],type = "s", col = "violet")
+legend("bottomright", c("Zero","Mean","Median","kNN","RF"), cex = 1.4, pch = "-", col = c("black","red","green","blue","violet"))
+
+plot(comp[1:25,1],type = "n",ylim = c(40,100), lab = c(25,10,7),ylab = "Percentage of correct classification in validation", xlab = "Number of components",cex.lab = 1.4, main = "(B) PLS-DA",cex.main = 1.4)
+points(comp[1:25,2],type = "s", col = "black")
+points(comp[1:25,4],type = "s", col = "red")
+points(comp[1:25,6],type = "s", col = "green")
+points(comp[1:25,8],type = "s", col = "blue")
+points(comp[1:25,10],type = "s", col = "violet")
+legend("bottomright", c("Zero","Mean","Median","kNN","RF"), cex = 1.4, pch = "-", col = c("black","red","green","blue","violet"))
